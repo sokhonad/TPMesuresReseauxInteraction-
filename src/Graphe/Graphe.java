@@ -39,7 +39,7 @@ public class Graphe {
   
   public static void main(String[] args) {
     Graphe g= new Graphe();
-    System.out.println("fin");
+    //System.out.println("fin");
     
   }
 }
