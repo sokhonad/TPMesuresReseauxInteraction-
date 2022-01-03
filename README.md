@@ -18,5 +18,5 @@ Question 4 :
 ------------
 La distribution des degrés dans le graphe suis la fonction suivante : 
 
-![distributivite](distributionLineare.png)
+![distributivite](distributionlIneaire.png)
 ![distributivite](DistributionLogLog.png)
