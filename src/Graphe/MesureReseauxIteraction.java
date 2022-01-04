@@ -20,12 +20,11 @@ import org.graphstream.graph.implementations.SingleGraph;
 import org.graphstream.stream.file.FileSource;
 import org.graphstream.stream.file.FileSourceEdge;
 
-public class Graphe {
+public class MesureReseauxIteraction {
 
   public Graph graph;
 
-  public Graphe() {
-    System.setProperty("org.graphstream.ui", "swing");
+  public MesureReseauxIteraction() {
     this.graph = new DefaultGraph("graph");
     FileSource fs = new FileSourceEdge();
     fs.addSink(this.graph);
@@ -144,7 +143,9 @@ public class Graphe {
 
 
   public static void main(String[] args) {
-    Graphe g= new Graphe();
+    System.setProperty("org.graphstream.ui", "swing");
+    System.setProperty("org.graphstream.ui", "swing");
+    MesureReseauxIteraction g= new MesureReseauxIteraction();
     //g.getGraph().display();
     g.mesuresDeBase();
     //g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
@@ -153,6 +154,9 @@ public class Graphe {
     System.out.println("resultat graphe aleatoire************");
     System.out.println("le coefficient de clustering de graphe aleatoire: ");
     System.out.println(Toolkit.averageClusteringCoefficient(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))));
+    graphAleatoireGraphStream(1000,12).display();
+
+   // graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())).display();
     System.out.println("Aleatoire isConnected: ");
     System.out.println(Toolkit.isConnected(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))
         ));
