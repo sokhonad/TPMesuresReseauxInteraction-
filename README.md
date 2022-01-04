@@ -20,6 +20,7 @@ La distribution des degrés dans le graphe suis la fonction suivante :
 
 ![distributivite](distributionlIneaire.png)
 ![distributivite](DistributionLogLog.png)
+
 Question 5:
 ------------
 La distance moyenne pour Le graphe des collaborations scientifiquesest de 8.294

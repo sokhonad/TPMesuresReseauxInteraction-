@@ -5,12 +5,14 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.graphstream.algorithm.Dijkstra;
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.algorithm.generator.BarabasiAlbertGenerator;
 import org.graphstream.algorithm.generator.Generator;
 import org.graphstream.algorithm.generator.RandomGenerator;
+import org.graphstream.graph.BreadthFirstIterator;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.DefaultGraph;
@@ -126,6 +128,7 @@ public class Graphe {
     System.out.println("distance moyenne : " + distanceMoyenne);
     return distributionDistance;
   }
+  
   
   public static Graph grapheBarabasiAlbert(int size, double degree) {
     Graph graphBarabasiAlbert = new SingleGraph("grapheBarabasiAlbert");
