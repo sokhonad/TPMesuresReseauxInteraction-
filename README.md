@@ -24,7 +24,7 @@ La distribution des degrés dans le graphe suit la fonction suivante :
 En traçant la distribution de degrés en échelle log-log on observe une ligne droite pendant plusieurs ordres de grandeur. Cela nous indique une loi de puissance 
 
     ```math
-    p_k = C k^{-\gamma}
+    a^2+b^2=c^2
     ```
 
 
