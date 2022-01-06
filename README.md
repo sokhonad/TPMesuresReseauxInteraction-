@@ -12,14 +12,21 @@ Pour un graph aléatoire de la même taille et du même degré moyen le coeffici
 
 Question 3 :
 ------------
-Le graph est connexe, un graph aléatoire de  la même taille et du même degré moyen n'est  pas connexe.
+Le graphe est connexe, un graphe aléatoire de  la même taille et du même degré moyen n'est normalement pas connexe car le degré moyen n'est pas supérieur au logarithme de la taille du graphe : ln(taille du graphe=317 080) = 12.66
 
 Question 4 :
 ------------
-La distribution des degrés dans le graphe suis la fonction suivante : 
+La distribution des degrés dans le graphe suit la fonction suivante : 
 
 ![distributivite](distributionlIneaire.png)
-![distributivite](DistributionLogLog.png)
+
+En traçant la distribution de degrés en échelle log-log on observe une ligne droite pendant plusieurs ordres de grandeur. Cela nous indique une loi de puissance 
+
+    ```math
+    p_k = C k^{-\gamma}
+    ```
+
+![distributivite](dd_dblp.png)
 
 Question 5:
 ------------
