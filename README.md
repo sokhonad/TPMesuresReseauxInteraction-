@@ -23,9 +23,7 @@ La distribution des degrés dans le graphe suit la fonction suivante :
 
 En traçant la distribution de degrés en échelle log-log on observe une ligne droite pendant plusieurs ordres de grandeur. Cela nous indique une loi de puissance 
 
-    ```math
-    a^2+b^2=c^2
-    ```
+![](https://latex.codecogs.com/gif.latex?p_k%20%3D%20C%20k%5E%7B-%5Cgamma%7D)
 
 
 ![distributivite](dd_dblp.png)
