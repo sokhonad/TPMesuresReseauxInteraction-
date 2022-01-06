@@ -42,8 +42,8 @@ Pour le graphe aléatoire de graphStream nous avons :
 - 1051236 Liens
 - un degré moyen de 6.63
 - un coefficient de clustering de 4.1571652387454414E-5
--Le graphe n' est pas connexe
--La distance moyenne est de 7.363
+- Le graphe n' est pas connexe
+- La distance moyenne est de 7.363
 
 Ils ont à peu près le même nombre de liens. Le coefficients de clustering d'un réseau aléatoire est 5 fois plus petit que celui que nous avons. Nous avons un graphe tel que le degré moyen est inférieur au logarithme de la taille du graphe, alors il ne devrait pas être connexe. La distance correspond au graphe de collaboration scientifique, ce qui est la caractéristique des graphe aléatoire. Le Graphe ressemble aux estimations faites excepté pour le clustering.
 
@@ -52,8 +52,8 @@ Pour le graphe Barabasi-Albert nous avons :
 - 1110676 Liens
 - un degré moyen de 7.005
 - un coefficient de clustering de 4.513878240505551E-4
--Le graphe est connexe
--La distance moyenne est de 6.059
+- Le graphe est connexe
+- La distance moyenne est de 6.059
 
 Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le degré moyen est le même mais le coefficient de clustering est inférieur. Le coefficient de clustering s'explique par le fait que lors de la création de noeud elle aurra beaucoup plus de chance de se lier avec une composante géante. Pour un haut taux de clustering il faudrait qu'un noeud ait plus de chance de s'atacher au voisin d'une composant géante qu'aux autres composantes géantes.
 
