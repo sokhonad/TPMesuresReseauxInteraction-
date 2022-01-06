@@ -155,8 +155,6 @@ public class MesureReseauxIteraction {
     System.out.println("le coefficient de clustering de graphe aleatoire: ");
     System.out.println(Toolkit.averageClusteringCoefficient(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))));
     graphAleatoireGraphStream(1000,12).display();
-
-   // graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())).display();
     System.out.println("Aleatoire isConnected: ");
     System.out.println(Toolkit.isConnected(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))
         ));
