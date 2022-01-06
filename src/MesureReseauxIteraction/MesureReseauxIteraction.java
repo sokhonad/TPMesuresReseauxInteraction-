@@ -41,7 +41,7 @@ public class MesureReseauxIteraction {
   public Graph getGraph() {
     return graph;
   }
-  private void mesuresDeBase() {
+  private void mesuresDeBaseDBLP() {
     System.out.println("Nombre de nœuds: "+graph.getNodeCount());
     System.out.println("Nombre de liens: "+graph.getEdgeCount());
     System.out.println("Degré moyen: "+Toolkit.averageDegree(graph));
@@ -79,7 +79,23 @@ public class MesureReseauxIteraction {
       e.printStackTrace();
     }
   }
-
+  private  void write1(String filename, double[] distributionDeDegre) {
+    try {
+      File file = new File(System.getProperty("user.dir") + "/" + filename);
+      if (!file.exists()) {
+        file.createNewFile();
+      }
+      FileWriter fw = new FileWriter(file.getAbsoluteFile());
+      BufferedWriter bw = new BufferedWriter(fw);
+      for (int i = 0 ; i < distributionDeDegre.length ; i++) {
+        bw.write(i + "    " + distributionDeDegre[i]/graph.getNodeCount());
+        bw.newLine();
+      }
+      bw.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 
   private static double[] getDistanceMoyenne(Graph graph) {
     Graph noeudTraite = new SingleGraph("noeudTraite");
@@ -140,6 +156,34 @@ public class MesureReseauxIteraction {
     barabasiAlbertGenerator.end();
     return graphBarabasiAlbert;
 }
+  void mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert() {
+    System.out.println("Pour graphe aleatoire");
+    Graph g1=graphAleatoireGraphStream(getGraph().getNodeCount(),Toolkit.averageDegree(getGraph()));
+    System.out.println("Nombre de liens: ");
+    System.out.println(g1.getEdgeCount());
+    System.out.println("Degre moyenne: ");
+    System.out.println(Toolkit.averageDegree(g1));
+    System.out.println("le coefficient de clustering de graphe aleatoire: ");
+    System.out.println(Toolkit.averageClusteringCoefficient(g1));
+    System.out.println("Aleatoire isConnected: ");
+    System.out.println(Toolkit.isConnected(g1));
+    System.out.println("Distace moyenne: ");
+    getDistanceMoyenne(g1);
+    
+    System.out.println("Pour graphe Barabasi-Albert");
+    Graph g2=grapheBarabasiAlbert(getGraph().getNodeCount(),Toolkit.averageDegree(getGraph()));
+    System.out.println("Nombre de liens: ");
+    System.out.println(g2.getEdgeCount());
+    System.out.println("Degre moyenne: ");
+    System.out.println(Toolkit.averageDegree(g2));
+    System.out.println("le coefficient de clustering de graphe Barabasi-Albert: ");
+    System.out.println(Toolkit.averageClusteringCoefficient(g2));
+    System.out.println("Barabasi-Albert isConnected: ");
+    System.out.println(Toolkit.isConnected(g2));
+    System.out.println("Distace moyenne: ");
+    getDistanceMoyenne(g2);
+       
+  }
 
 
   public static void main(String[] args) {
@@ -147,21 +191,14 @@ public class MesureReseauxIteraction {
     System.setProperty("org.graphstream.ui", "swing");
     MesureReseauxIteraction g= new MesureReseauxIteraction();
     //g.getGraph().display();
-    g.mesuresDeBase();
+    //g.mesuresDeBaseDBLP();
     //g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
     getDistanceMoyenne(g.getGraph());
+   double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
+   g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);
+   //Q6
+   g.mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert();
 
-    System.out.println("resultat graphe aleatoire************");
-    System.out.println("le coefficient de clustering de graphe aleatoire: ");
-    System.out.println(Toolkit.averageClusteringCoefficient(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))));
-    graphAleatoireGraphStream(1000,12).display();
-    System.out.println("Aleatoire isConnected: ");
-    System.out.println(Toolkit.isConnected(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()))
-        ));
-   double tab[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
-   for (int i = 0; i < tab.length; i++) {
-    System.out.println(tab[i]);
-  }
     System.out.println("fin programme");
 
 
