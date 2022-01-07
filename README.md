@@ -68,7 +68,7 @@ Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le 
 ##taux de propagation du virus : 
 
 $\lambda = \frac{\beta}{\mu}$
-$\lambda = \frac{\frac{1}{7}}{\frac{1}{14}}$
+ $\lambda = \frac{\frac{1}{7}}{\frac{1}{14}}$
 
 ##le seuil épidémique : 
 
