@@ -1,6 +1,6 @@
-    ```math
-    p_k = C k^{-\gamma}
-    ```
+```math
+p_k = C k^{-\gamma}
+```
 
 
 # Paritie 1 : TPMesuresReseauxInteraction
