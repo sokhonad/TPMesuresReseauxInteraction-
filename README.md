@@ -89,5 +89,8 @@ Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le 
 
 ```math
 \lambda_c = \frac{1}{7.62}
+```
+
+```math
 \lambda_c = 0.13
 ```
