@@ -65,21 +65,28 @@ Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le 
 # Partie 2 : Propagation
 #Question 1:
 
-##taux de propagation du virus : 
+## taux de propagation du virus : 
+
 ```math
 \lambda = \frac{\beta}{\mu}
 ```
- $\lambda = \frac{\frac{1}{7}}{\frac{1}{14}}$
-##le seuil épidémique : 
+```math
+ \lambda = \frac{\frac{1}{7}}{\frac{1}{14}}
+ ```
+## le seuil épidémique : 
+```math
+\lambda_c = \frac{<k>}{<k^{2}>}
+```
+### Pour le graph du réseau scientifique
 
-$\lambda_c = \frac{<k>}{<k^{2}>}$
+```math
+\lambda_c = \frac{6.62}{144.01}
+```
+```math
+\lambda_c = 0.0459
+```
 
-###Pour le graph du réseau scientifique
-
-$\lambda_c = \frac{6.62}{144.01}$
-$\lambda_c = 0.0459$
-
-###Pour un graph aléatoire :
+### Pour un graph aléatoire :
 
 $\lambda_c = \frac{1}{<k> + 1}$
 $\lambda_c = \frac{1}{7.62}$
