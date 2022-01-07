@@ -1,8 +1,3 @@
-```math
-p_k = C k^{-\gamma}
-```
-
-
 # Paritie 1 : TPMesuresReseauxInteraction
 Question 2 : 
 ------------
@@ -81,13 +76,18 @@ Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le 
 
 ```math
 \lambda_c = \frac{6.62}{144.01}
+```
 
+```math
 \lambda_c = 0.0459
 ```
 
 ### Pour un graph aléatoire :
+```math
+\lambda_c = \frac{1}{<k> + 1}
+```
 
-$\lambda_c = \frac{1}{<k> + 1}$
-$\lambda_c = \frac{1}{7.62}$
-$\lambda_c = 0.13$
-
+```math
+\lambda_c = \frac{1}{7.62}
+\lambda_c = 0.13
+```
