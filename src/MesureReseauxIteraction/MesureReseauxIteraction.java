@@ -205,7 +205,7 @@ public class MesureReseauxIteraction {
     MesureReseauxIteraction g= new MesureReseauxIteraction();
     //g.getGraph().display();
     //g.mesuresDeBaseDBLP();
-    //g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
+    g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
     getDistanceMoyenne(g.getGraph());
     double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
     g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);

@@ -18,8 +18,8 @@ Question 4 :
 ------------
 La distribution des degrés dans le graphe suit la fonction suivante : 
 
-![distributivite](./Data/distributionlIneaire.png)
-![distributivite](./Data/DistributionLogLog.png)
+![distributivite](./Data/DistributiondedegrespLineaire.png)
+![distributivite](./Data/DistributiondedegresLoglog.png)
 
 En traçant la distribution de degrés en échelle log-log on observe une ligne droite pendant plusieurs ordres de grandeur. Cela nous indique une loi de puissance 
 
