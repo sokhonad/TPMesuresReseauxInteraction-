@@ -58,6 +58,9 @@ Pour le graphe Barabasi-Albert nous avons :
 
 Le graphe de Barabasi-Albert posséde à peu près le même nombre de liens, le degré moyen est le même mais le coefficient de clustering est inférieur. Le coefficient de clustering s'explique par le fait que lors de la création de noeud elle aurra beaucoup plus de chance de se lier avec une composante géante. Pour un haut taux de clustering il faudrait qu'un noeud ait plus de chance de s'atacher au voisin d'une composant géante qu'aux autres composantes géantes.
 
+Question Bonus : 
+---------------
+
 # Partie 2 : Propagation
 #Question 1:
 

@@ -12,6 +12,7 @@ import org.graphstream.algorithm.Toolkit;
 import org.graphstream.algorithm.generator.BarabasiAlbertGenerator;
 import org.graphstream.algorithm.generator.Generator;
 import org.graphstream.algorithm.generator.RandomGenerator;
+import org.graphstream.algorithm.generator.WattsStrogatzGenerator;
 import org.graphstream.graph.BreadthFirstIterator;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
@@ -143,19 +144,19 @@ public class MesureReseauxIteraction {
     System.out.println("distance moyenne : " + distanceMoyenne);
     return distributionDistance;
   }
-  
-  
+
+
   public static Graph grapheBarabasiAlbert(int size, double degree) {
     Graph graphBarabasiAlbert = new SingleGraph("grapheBarabasiAlbert");
     Generator barabasiAlbertGenerator = new BarabasiAlbertGenerator((int) degree);
     barabasiAlbertGenerator.addSink(graphBarabasiAlbert);
     barabasiAlbertGenerator.begin();
     for (int i = 0; i < size; i++) {
-        barabasiAlbertGenerator.nextEvents();
+      barabasiAlbertGenerator.nextEvents();
     }
     barabasiAlbertGenerator.end();
     return graphBarabasiAlbert;
-}
+  }
   void mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert() {
     System.out.println("Pour graphe aleatoire");
     Graph g1=graphAleatoireGraphStream(getGraph().getNodeCount(),Toolkit.averageDegree(getGraph()));
@@ -169,7 +170,7 @@ public class MesureReseauxIteraction {
     System.out.println(Toolkit.isConnected(g1));
     System.out.println("Distace moyenne: ");
     getDistanceMoyenne(g1);
-    
+
     System.out.println("Pour graphe Barabasi-Albert");
     Graph g2=grapheBarabasiAlbert(getGraph().getNodeCount(),Toolkit.averageDegree(getGraph()));
     System.out.println("Nombre de liens: ");
@@ -182,8 +183,20 @@ public class MesureReseauxIteraction {
     System.out.println(Toolkit.isConnected(g2));
     System.out.println("Distace moyenne: ");
     getDistanceMoyenne(g2);
-       
+
   }
+
+  private static Graph secondVarianteOfCopyMethod(int nodeV, int degree, double p) {
+    Graph graphe = new SingleGraph("graphe");
+    Generator wattsStrogatzGenerator = new WattsStrogatzGenerator(nodeV, degree, p);
+    wattsStrogatzGenerator.addSink(graphe);
+    wattsStrogatzGenerator.begin();
+    while (wattsStrogatzGenerator.nextEvents()) {
+    }
+    wattsStrogatzGenerator.end();
+    return graphe;
+  }
+
 
 
   public static void main(String[] args) {
@@ -194,11 +207,13 @@ public class MesureReseauxIteraction {
     //g.mesuresDeBaseDBLP();
     //g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
     getDistanceMoyenne(g.getGraph());
-   double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
-   g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);
-   //Q6
-   g.mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert();
+    double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
+    g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);
+    //Q6
+    g.mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert();
 
+    //7. variante de la méthode de copie qui fait mieux
+    //secondVarianteOfCopyMethod(nodeV, degree, p);
     System.out.println("fin programme");
 
 
