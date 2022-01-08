@@ -18,16 +18,14 @@ Question 4 :
 ------------
 La distribution des degrés dans le graphe suit la fonction suivante : 
 
-![distributivite](distributionlIneaire.png)
-![distributivite](DistributionLogLog.png)
+![distributivite](./Data/distributionlIneaire.png)
+![distributivite](./Data/DistributionLogLog.png)
 
 En traçant la distribution de degrés en échelle log-log on observe une ligne droite pendant plusieurs ordres de grandeur. Cela nous indique une loi de puissance 
 
-    ```latex
-    p_k = C k^{-\gamma}
-    ```
 
-![distributivite](dd_dblp.png)
+
+![distributivite](./Data/dd_dblp.png)
 
 Question 5:
 ------------
@@ -62,25 +60,39 @@ Question Bonus :
 ---------------
 
 # Partie 2 : Propagation
-#Question 1:
+# Question 1:
 
-##taux de propagation du virus : 
+## taux de propagation du virus : 
 
-$\lambda = \frac{\beta}{\mu}$
-$\lambda = \frac{\frac{1}{7}}{\frac{1}{14}}$
+```math
+\lambda = \frac{\beta}{\mu}
+```
+```math
+ \lambda = \frac{\frac{1}{7}}{\frac{1}{14}}
+ ```
+## le seuil épidémique : 
+```math
+\lambda_c = \frac{<k>}{<k^{2}>}
+```
+### Pour le graph du réseau scientifique
 
-##le seuil épidémique : 
+```math
+\lambda_c = \frac{6.62}{144.01}
+```
 
-$\lambda_c = \frac{<k>}{<k^{2}>}$
+```math
+\lambda_c = 0.0459
+```
 
-###Pour le graph du réseau scientifique
+### Pour un graph aléatoire :
+```math
+\lambda_c = \frac{1}{<k> + 1}
+```
 
-$\lambda_c = \frac{6.62}{144.01}$
-$\lambda_c = 0.0459$
+```math
+\lambda_c = \frac{1}{7.62}
+```
 
-###Pour un graph aléatoire :
-
-$\lambda_c = \frac{1}{<k> + 1}$
-$\lambda_c = \frac{1}{7.62}$
-$\lambda_c = 0.13$
-
+```math
+\lambda_c = 0.13
+```
