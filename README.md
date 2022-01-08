@@ -33,6 +33,8 @@ La distance moyenne pour Le graphe des collaborations scientifiquesest de 8.294
 
 Pour le graph aléatoire de graphStream La distance moyenne est de 7.697
 
+![distributivite](./Data/distribitiondistance.png)
+
 Question 6:
 ----------
 

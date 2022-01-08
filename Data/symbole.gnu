@@ -50,3 +50,12 @@ set xlabel "x"
 
 plot "DistributionDistanceGrapheAleatoireGraphStream.data" t "Distribution de distance" with linesp lt 1 pt 1
 
+
+set terminal x11
+set encoding utf8
+set xrange [1:22]
+set yrange [0:0.3]
+set xlabel "x"
+set output 'distribition distance.png'
+plot "DistributionDistanceGrapheAleatoireGraphStream.data" t "Distribution des distances" with linesp lt 1 pt 1
+
