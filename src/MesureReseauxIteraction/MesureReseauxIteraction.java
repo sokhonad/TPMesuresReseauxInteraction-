@@ -203,26 +203,17 @@ public class MesureReseauxIteraction {
     System.setProperty("org.graphstream.ui", "swing");
     System.setProperty("org.graphstream.ui", "swing");
     MesureReseauxIteraction g= new MesureReseauxIteraction();
-    //g.getGraph().display();
-    //g.mesuresDeBaseDBLP();
-    //g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
-    //getDistanceMoyenne(g.getGraph());
-    //double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
-    //g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);
-    //Q6
-    //g.mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert();
-
+    g.getGraph().display();
+    g.mesuresDeBaseDBLP();
+    g.write("distribition.data", Toolkit.degreeDistribution(g.getGraph()));
+    getDistanceMoyenne(g.getGraph());
+    double tabDistributionDistanceGrapheAleatoireGraphStream[]= getDistanceMoyenne(graphAleatoireGraphStream(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph())));
+    g.write1("DistributionDistanceGrapheAleatoireGraphStream.data", tabDistributionDistanceGrapheAleatoireGraphStream);
+    g.mesereDeBaseGrapheAleatoireEtGrapheBarabasiAlbert();
     //7 Bonus. variante de la méthode de copie 
-    System.out.println("aaaaaaaaaaaaaa: ");
     Graph g2=grapheBarabasiAlbert(g.getGraph().getNodeCount(),Toolkit.averageDegree(g.getGraph()));
-
-    //Graph g2=grapheBarabasiAlbert(30000,Toolkit.averageDegree(g.getGraph()));
-    System.out.println("bbbbbbbbbbbbbbbbb ");
-
     Graph copie= secondVarianteOfCopyMethod( (int)(Math.random() * ((g2.getNodeCount()))), (int)Toolkit.averageDegree(g2), 0.5);
-    
-    System.out.println("cccccccccccccccccccccccs: ");
-System.out.println("Nombre de liens: ");
+    System.out.println("Nombre de liens: ");
     System.out.println(copie.getEdgeCount());
     System.out.println("Degre moyenne: ");
     System.out.println(Toolkit.averageDegree(copie));
