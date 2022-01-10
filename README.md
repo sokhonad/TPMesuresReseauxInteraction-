@@ -71,7 +71,7 @@ variante de la méthode de copie avec p=0.5 nous avons :
 - Le graphe est connexe
 - La distance moyenne est de 8.806
 
-Avec cette, nous génère un réseau connexe avec un coefficient  de clustering plus petit.
+Avec cette methode, nous génère un réseau connexe avec un coefficient  de clustering plus petit.
   
 # Partie 2 : Propagation
 # Question 1:
