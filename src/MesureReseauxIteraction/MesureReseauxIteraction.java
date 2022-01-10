@@ -50,7 +50,7 @@ public class MesureReseauxIteraction {
     System.out.println("isConnected: "+Toolkit.isConnected(graph));
   }
 
-  private static Graph graphAleatoireGraphStream(int taille,double degre) {
+  public static Graph graphAleatoireGraphStream(int taille,double degre) {
     Graph graphAleatoireGraphStream = new DefaultGraph("graphAleatoire");
     Generator gen = new RandomGenerator(degre, false, false);
     gen.addSink(graphAleatoireGraphStream);
