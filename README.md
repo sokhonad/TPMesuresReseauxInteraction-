@@ -110,7 +110,7 @@ Avec cette methode, nous génère un réseau connexe avec un coefficient  de clu
 ```math
 \lambda_c = 0.13
 ```
-#Question 2:
+# Question 2:
 
 ![distributivite](./Data/courbe2.png)
 
@@ -121,7 +121,8 @@ Avec cette methode, nous génère un réseau connexe avec un coefficient  de clu
 Lors du scénario sans immunisation les tau tournent tous autour de 80% de contamination, il n'y a donc pas de différence notable à remarquer.
 
 La différence se fait dans le scénario 2 et 3 puisque c'est simulations prouvent l'influence des composantes géantes, l'ont peut voir que le graph scientifique et le graph de Barabási-Albert ont à peu près les mêmes valeurs contrairement au graph aléatoire. En effet celui-ci a très peux de composantes géantes.
-#question 3:
+
+# question 3:
 
 ## degré moyen des groupe des personnes convaincu du scénario 2 et du scénario 3:
 
@@ -157,4 +158,4 @@ Le seuil épidémique du réseau pour le scénario 2 est de  0.04722582225685172
 
 ### Pour un graph aléatoire :
 
-Le seuil épidémique du réseau pour le scénario 2 est de  0.19506322895995423 et celui du scénrio 3 de 0.18883315404007478. Ici la différence est extrèmement minime car il n'y a quasiment aucune composantes géantes.
+Le seuil épidémique du réseau pour le scénario 2 est de  0.18506322895995423 et celui du scénrio 3 de 0.17883315404007478. Ici la différence est extrèmement minime car il n'y a quasiment aucune composantes géantes.
