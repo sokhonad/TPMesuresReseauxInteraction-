@@ -27,9 +27,9 @@ public class Propagation {
   private int nbNonConvaincu;
   private Node noeudContamine;
 
-  public double[] tab1;
-  public double[] tab2;
-  public double[] tab3;
+  public double[] tableauDonneesGrapheScientique;
+  public double[] tableauDonneesgraphAleaBarabasiAlbert;
+  public double[] tableauDonneesgrapheAleatoire;
 
 
 
@@ -114,7 +114,7 @@ public class Propagation {
   public void scenariosAucuneImunisation(Graph graph) {
     double[] nbContamineMoyenne = new double[this.nombreDeJour + 1];
     double[] nbContamine = new double[this.nombreDeJour + 1];
-    this.tab1 = new double[(this.nombreDeJour + 1) * 2];
+    this.tableauDonneesGrapheScientique = new double[(this.nombreDeJour + 1) * 2];
     System.out.println("beta : " + this.beta + "    mu : " + this.mu);
     for (int i = 0 ; i < this.fiabilite ; i++) {
       this.initialisationScenario(graph);
@@ -129,15 +129,15 @@ public class Propagation {
     for (int j = 0 ; j < nbContamine.length ; j++) {
       nbContamineMoyenne[j] = nbContamineMoyenne[j] / this.fiabilite;
       nbContamineMoyenne[j] = (nbContamineMoyenne[j] * 100)/this.nbNonConvaincu;
-      this.tab1[(j * 2)] = j;
-      this.tab1[(j * 2) + 1] = nbContamineMoyenne[j];
+      this.tableauDonneesGrapheScientique[(j * 2)] = j;
+      this.tableauDonneesGrapheScientique[(j * 2) + 1] = nbContamineMoyenne[j];
     }
   }
 
   public void scenariosImunisationAleatoire(Graph graph) {
     double[] nbContamineMoyenne = new double[this.nombreDeJour + 1];
     double[] nbContamine = new double[this.nombreDeJour + 1];
-    this.tab2 = new double[(this.nombreDeJour + 1) * 2];
+    this.tableauDonneesgraphAleaBarabasiAlbert = new double[(this.nombreDeJour + 1) * 2];
     System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nscénario de l'imunisation aléatoire : ");
     System.out.println("beta : " + this.beta + "    mu : " + this.mu);
     for (int i = 0 ; i < this.fiabilite ; i++) {
@@ -154,14 +154,14 @@ public class Propagation {
     for (int j = 0 ; j < nbContamine.length ; j++) {
       nbContamineMoyenne[j] = nbContamineMoyenne[j] / this.fiabilite;
       nbContamineMoyenne[j] = (nbContamineMoyenne[j] * 100)/this.nbNonConvaincu;
-      this.tab2[(j * 2)] = j;
-      this.tab2[(j * 2) + 1] = nbContamineMoyenne[j];
+      this.tableauDonneesgraphAleaBarabasiAlbert[(j * 2)] = j;
+      this.tableauDonneesgraphAleaBarabasiAlbert[(j * 2) + 1] = nbContamineMoyenne[j];
     }
   }
 
   public void scenariosImunisationSelective(Graph graph) {
     double[] nbContamineMoyenne = new double[this.nombreDeJour + 1];
-    this.tab3 = new double[(this.nombreDeJour + 1) * 2];
+    this.tableauDonneesgrapheAleatoire = new double[(this.nombreDeJour + 1) * 2];
     double[] nbContamine = new double[this.nombreDeJour + 1];
     System.out.println("\n\n\n\n\n\n\n\nscénario de l'imunisation sélective : ");
     System.out.println("beta : " + this.beta + "    mu : " + this.mu);
@@ -179,8 +179,8 @@ public class Propagation {
     for (int j = 0 ; j < nbContamine.length ; j++) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
       nbContamineMoyenne[j] = nbContamineMoyenne[j] / this.fiabilite;
       nbContamineMoyenne[j] = (nbContamineMoyenne[j] * 100)/this.nbNonConvaincu;
-      this.tab3[(j * 2)] = j;
-      this.tab3[(j * 2) + 1] = nbContamineMoyenne[j];
+      this.tableauDonneesgrapheAleatoire[(j * 2)] = j;
+      this.tableauDonneesgrapheAleatoire[(j * 2) + 1] = nbContamineMoyenne[j];
     } 
   }
 
@@ -205,10 +205,10 @@ public class Propagation {
   }
 
   public double[] getTab1() {
-    return tab1;
+    return tableauDonneesGrapheScientique;
   }
   public void setTab1(double[] tab1) {
-    this.tab1 = tab1;
+    this.tableauDonneesGrapheScientique = tab1;
   }
   public void initScenariosImunisationAleatoire(Graph graph) {
     graph.nodes().forEach(n -> {
@@ -225,29 +225,29 @@ public class Propagation {
 
   public void simulationSurGrapheReseauxScientique() {
     this.scenariosAucuneImunisation(this.graph);
-    write("scenarios1ReseauxScientique.data", tab1);
+    write("scenarios1ReseauxScientique.data", tableauDonneesGrapheScientique);
     this.scenariosImunisationAleatoire(graph);
-    write("scenarios2ReseauxScientique.data", tab2);
+    write("scenarios2ReseauxScientique.data", tableauDonneesgraphAleaBarabasiAlbert);
     this.scenariosImunisationSelective(graph);
-    write("scenarios3ReseauxScientique.data", tab3);
+    write("scenarios3ReseauxScientique.data", tableauDonneesgrapheAleatoire);
 
   }
   public void simulationSurGraphAleatoire() {
     this.scenariosAucuneImunisation(graphAleatoire);
-    write("scenarios1GraphAleatoire.data", tab1);
+    write("scenarios1GraphAleatoire.data", tableauDonneesGrapheScientique);
     this.scenariosImunisationAleatoire(graphAleatoire);
-    write("scenarios2GraphAleatoire.data", tab2);
+    write("scenarios2GraphAleatoire.data", tableauDonneesgraphAleaBarabasiAlbert);
     this.scenariosImunisationSelective(graphAleatoire);
-    write("scenarios3GraphAleatoire.data", tab3);
+    write("scenarios3GraphAleatoire.data", tableauDonneesgrapheAleatoire);
 
   }
   public void simulationSurGraphALBarabasiAlbert() {
     this.scenariosAucuneImunisation(graphAleaBarabasiAlbert);
-    write("scenarios1graphAleaBarabasiAlbert.data", tab1);
+    write("scenarios1graphAleaBarabasiAlbert.data", tableauDonneesGrapheScientique);
     this.scenariosImunisationAleatoire(graphAleaBarabasiAlbert);
-    write("scenarios2ALBarabasiAlbert.data", tab2);
+    write("scenarios2ALBarabasiAlbert.data", tableauDonneesgraphAleaBarabasiAlbert);
     this.scenariosImunisationSelective(graphAleaBarabasiAlbert);
-    write("scenarios3ALBarabasiAlbert.data", tab3);
+    write("scenarios3ALBarabasiAlbert.data", tableauDonneesgrapheAleatoire);
 
   }
 
@@ -297,16 +297,64 @@ public class Propagation {
     return seuilEpidemique;
   }
 
+
+
   public double seuilEpidemiquetheoriqueReseauSansScenario(Graph graph) {
     this.initialisationScenario(graph);
     this.initScenariosImunisationAleatoire(graph);
     double seuilEpidemique =  this.degreMoyen / this.getMoyenneDegre(graph);
     return seuilEpidemique;
   }
-  
+
+
+  public void affichedegreMoyenGroup0Et1(Graph graph) {
+    this.initialisationScenario(graph);
+    graph.forEach(n -> {
+      n.setAttribute("groupe0", false);
+      n.setAttribute("groupe1", false);
+    });
+    graph.nodes().forEach(n -> {
+      if (Math.random() <= 0.5) {
+        n.setAttribute("groupe0", true);
+        int nbVoisin = (int) n.neighborNodes().count();
+        double[] alea = {Math.random() * nbVoisin};
+        if (alea[0] % 1 != 0) {
+          alea[0] += 1;
+        }
+        alea[0] = alea[0] - (alea[0] % 1);
+        int[] i = {0};
+        n.neighborNodes().forEach(voisin -> {
+          i[0]++;
+          if (i[0] == alea[0]) {
+            voisin.setAttribute("groupe1", true);
+          }
+        });
+      }
+    });
+    double[] degreMoyen = {0, 0};
+    int[] nbNoeud = {0, 0};
+    graph.nodes().forEach(n -> {
+      if ((boolean)(n.getAttribute("groupe0")) == true) {
+        nbNoeud[0]++;
+        degreMoyen[0] += n.getDegree();
+      }
+      if ((boolean)(n.getAttribute("groupe1")) == true) {
+        nbNoeud[1]++;
+        degreMoyen[1] += n.getDegree();
+      }
+    });
+    degreMoyen[0] = degreMoyen[0] / nbNoeud[0];
+    degreMoyen[1] = degreMoyen[1] / nbNoeud[1];
+    System.out.println("nombre de noeud groupe 0 " + nbNoeud[0] + " degre moyen groupe 0 : " + degreMoyen[0]);
+    System.out.println("nombre de noeud groupe 1 " + nbNoeud[1] + " degre moyen groupe 1 : " + degreMoyen[1]);
+  }
+
+
   private void testDeDifferenceSeuils() {
     System.out.println("seuil épidémique du réseau sans scénario : " + this.seuilEpidemiquetheoriqueReseauSansScenario(this.graph));
     System.out.println("seuil épidémique du réseau Aleatoire : " + this.seuilEpidemiquetheoriqueReseauAleatoire());
+    System.out.println("seuil épidémique du réseau sans scénario : " + this.seuilEpidemiquetheoriqueReseauSansScenario(this.graphAleaBarabasiAlbert));
+
   }
 
 
@@ -335,12 +383,14 @@ public class Propagation {
   }
 
 
+
   public static void main(String... arg) {
     Propagation Propagation = new Propagation( Math.pow(7, -1), Math.pow(14, -1), 100, 3);
-//    Propagation.simulationSurGrapheReseauxScientique();
-//    Propagation.simulationSurGraphAleatoire();
-//    Propagation.simulationSurGraphALBarabasiAlbert();
-
+    Propagation.simulationSurGrapheReseauxScientique();
+    Propagation.simulationSurGraphAleatoire();
+    Propagation.simulationSurGraphALBarabasiAlbert();
+    Propagation.testDeDifferenceSeuils();
+    Propagation.affichedegreMoyenGroup0Et1(Propagation.getGraph());
   }
 
 }
