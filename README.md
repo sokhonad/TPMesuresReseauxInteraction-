@@ -116,45 +116,45 @@ Avec cette methode, nous génère un réseau connexe avec un coefficient  de clu
 
 ![distributivite](./Data/courbe1.png)
 
-![distributivite](./Data/courbe0.png.eps)
+![distributivite](./Data/courbe0.png)
 
 Lors du scénario sans immunisation les tau tournent tous autour de 80% de contamination, il n'y a donc pas de différence notable à remarquer.
 
 La différence se fait dans le scénario 2 et 3 puisque c'est simulations prouvent l'influence des composantes géantes, l'ont peut voir que le graph scientifique et le graph de Barabási-Albert ont à peu près les mêmes valeurs contrairement au graph aléatoire. En effet celui-ci a très peux de composantes géantes.
 #question 3:
 
-##degré moyen des groupe des personnes convaincu du scénario 2 et du scénario 3:
+## degré moyen des groupe des personnes convaincu du scénario 2 et du scénario 3:
 
-###Pour le graph du réseau scientifique
+### Pour le graph du réseau scientifique
 
 nombre de noeud groupe 0 158660 degre moyen groupe 0 : 6.6154040085717885
 nombre de noeud groupe 1 101930 degre moyen groupe 1 : 11.363288531345042
 
 Le degré moyen du groupe 0 est égal à 6,62 ce qui correspond au degré moyen du graph tandis que le groupe 1 a un degré moyen égal à 11,35. Cette différence s'explique à cause des composantes géantes. En effet il y a peu de chance de saisir une composante géante au hasard, par contre avoir un noeud d'ont le voisin est un une composante géante est plus importante. C'est pour ça qu'il y a une grosse différence de degré moyen de noeud. Ont peut aussi le voir avec le nombre de noeuds du groupe 0 qui est beaucoup plus  important qu le nombre de noeuds du groupe 1, 158660 noeuds pour le groupe 0 et 101930 pour le groupe 1. Il y a donc des noeuds qui ont été rajouté plusieurs fois dans le groupe 1 mais compté une seul fois, ce sont donc des composantes géantes.
 
-###Pour le graph du graph de Barabási-Albert
+### Pour le graph du graph de Barabási-Albert
 
 Le degré moyen du groupe 0 est égal à 6,85 ce qui correspond au degré moyen du graph tandis que le groupe 1 a un degré moyen égal à 14,36. L'explication est la même que celui du graph scientifique.
 
-###Pour un graph aléatoire :
+### Pour un graph aléatoire :
 
 nombre de noeud groupe 0 158552 degre moyen groupe 0 : 6.604438015589272
 nombre de noeud groupe 1 121980 degre moyen groupe 1 : 8.272779176914249
 
 Il y a une petite différence car les premiers noeuds ont forcéménts plus de chance d'avoir de noeuds, ont avons donc quelques composantes géantes mais ça ne représente pas une part importante du graph. Ici la différence du nombre de noeuds est plus petite, 158552 pour le groupe 0 et 121980 pour le groupe 1. On peut voir des composantes géantes mais deux fois moins environ que les autres graphes.
 
-#question 4:
+# question 4:
 
-##le seuil épidémique du réseau modifié pour le scénario 2 et 3:
+## le seuil épidémique du réseau modifié pour le scénario 2 et 3:
 
-###Pour le graph du réseau scientifique
+### Pour le graph du réseau scientifique
 
 Le seuil épidémique du réseau pour le scénario 2 est de 0.08687670580259488 et celui du scénrio 3 de 0.09095410147983138. L'ont peut voir  une différence grâve au fait que des composantes géantes sont retirés du graph lors du troisième scénario.
 
-###Pour le graph du graph de Barabási-Albert
+### Pour le graph du graph de Barabási-Albert
 
 Le seuil épidémique du réseau pour le scénario 2 est de  0.04722582225685172 et celui du scénrio 3 de 0.05801839733887641. La différence vient du même fénomène, celle-ci est moidre car ce type de graph il y a moins de composantes géantes
 
-###Pour un graph aléatoire :
+### Pour un graph aléatoire :
 
 Le seuil épidémique du réseau pour le scénario 2 est de  0.19506322895995423 et celui du scénrio 3 de 0.18883315404007478. Ici la différence est extrèmement minime car il n'y a quasiment aucune composantes géantes.
