@@ -111,10 +111,14 @@ Avec cette methode, nous génère un réseau connexe avec un coefficient  de clu
 \lambda_c = 0.13
 ```
 # Question 2:
-
+### Pour un graph aléatoire :
 ![distributivite](./Data/courbe2.png)
 
+### Pour le graph du réseau scientifique
+
 ![distributivite](./Data/courbe1.png)
+
+### Pour le graph du réseau  Barabási-Albert
 
 ![distributivite](./Data/courbe0.png)
 
